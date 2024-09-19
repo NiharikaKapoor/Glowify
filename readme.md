@@ -1,7 +1,3 @@
-Here's a basic structure for the README file for your "Glowify" project:
-
----
-
 # Glowify - A Skin Care Website
 
 Glowify is a modern and sleek website designed to offer users an immersive experience in discovering the best skin care products, routines, and tips. Built with a focus on aesthetics and functionality, Glowify ensures users can easily navigate and explore the perfect regimen for their skin type.
