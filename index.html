@@ -40,7 +40,7 @@
                 <h1 class="heads">Super Value Deals</h1>
                 <h1>On All Products</h1>
                 <p>Made using clean, non-toxic ingredients, our products are designed for everyone.</p>
-                <button>Explore</button>
+                <button type="button">Explore</button>
             </div>
             <img src="img/hero-banner-1.jpg" alt="">
         </div>
@@ -62,7 +62,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br> -->
-                        <button onclick="add(item1)">Shop Now</button>
+                        <button type="button" onclick="add(item1)">Shop Now</button>
                     </div>
                 </div>
                 <div class="crd">
@@ -75,7 +75,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br> --> 
-                        <button>Discover Now</button>
+                        <button type="button">Discover Now</button>
                     </div>
                 </div>
                 <div class="crd">
@@ -88,7 +88,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br> -->
-                        <button>Shop Now</button>
+                        <button type="button">Shop Now</button>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
 
             <div class="card">
                 <div class="crd">
-                    <img src="img/product-01.jpg" alt="" onclick="showCard(this) ">
+                    <img src="img/product-01.jpg" alt="" onclick="showCard(0) ">
                     <div class="txt">
                         <h3>Facial Cleanser</h3>
                         <i class="fa-solid fa-star"></i>
@@ -110,11 +110,11 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br>
-                        <button>Add To Cart</button>
+                        <button type="button">Add To Cart</button>
                     </div>
                 </div>
                 <div class="crd">
-                    <img src="img/product-05.jpg" alt="" onclick="showCard(this) ">
+                    <img src="img/product-05.jpg" alt="" onclick="showCard(1) ">
                     <div class="txt">
                         <h3>Coffee Bean Caffiene Eye Cream</h3>
                         <i class="fa-solid fa-star"></i>
@@ -122,11 +122,11 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br>
-                        <button>Add To Cart</button>
+                        <button type="button">Add To Cart</button>
                     </div>
                 </div>
                 <div class="crd">
-                    <img src="img/product-10.jpg" alt="" onclick="showCard(this)">
+                    <img src="img/product-10.jpg" alt="" onclick="showCard(2)">
                     <div class="txt">
                         <h3>Bio-shroom Rejuvenating Serum</h3>
                         <i class="fa-solid fa-star"></i>
@@ -134,7 +134,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br>
-                        <button>Add To Cart</button>
+                        <button type="button">Add To Cart</button>
                     </div>
                 </div>
             </div>
@@ -144,16 +144,15 @@
         <div class="fullPage">
             <img id="cartImg" src=" " alt="">
             <div class="cartText">
-                <h1>Trends Offer : Trending Shop <br> Now</h1>
+                <h1 id="productName">Glowify Special: Shop Trending Skincare</h1>
                 <h2>Special Price</h2>
-                <h2>$11</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <h2 id="productPrice">$11</h2>
+                <p id="productDesc1">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <p id="productDesc2">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <p id="productDesc3">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
                 <div class="btn">
                     <button>Buy Now</button>
-                    <button onclick="addToCart()">Add To Cart</button>
-
+                    <button onclick="addToCart(1)">Add To Cart</button>
                 </div>
                 <div class="btns">
                     <button class="relode" onclick="location.reload()">Back </button>
@@ -170,130 +169,122 @@
 
         <div class="blogContent">
             <div class="head">
-                <h1>Trends Top <span>Blog's</span></h1>
+                <h1>Glowify Top <span>Blogs</span></h1>
             </div>
-
+        
             <div class="trd">
                 <div class="trending">
-                    <img src="tr1.webp" alt="">
+                    <img src="img/banner-1.jpg" alt="Glowify Skincare Tips">
                     <div class="txt">
-                        <h3>Trending Girl Cloths</h3><br>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, animi expedita?</p><br>
-                        <a href="https://influencermarketinghub.com/best-fashion-blogs/">Read More</a>
+                        <h3>Top Skincare Tips for Glowing Skin</h3><br>
+                        <p>Discover expert skincare routines and tips for achieving flawless, glowing skin naturally.</p><br>
+                        <a href="https://www.skincare.com/expert-advice">Read More</a>
                     </div>
                 </div>
                 <div class="trending">
-                    <img src="tr3.webp" alt="">
+                    <img src="img/hero-banner-3.jpg" alt="Glowify Skincare Products">
                     <div class="txt">
-                        <h3>Trending Boys Cloths</h3> <br>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, animi expedita?</p><br>
-                        <a href="https://www.apetogentleman.com/">Read More</a>
+                        <h3>Best Skincare Products of 2024</h3> <br>
+                        <p>Explore the most recommended skincare products of the year, perfect for every skin type.</p><br>
+                        <a href="https://www.healthline.com/skincare">Read More</a>
                     </div>
                 </div>
-
             </div>
         </div>
+        
 
         <div class="about">
             <div class="aboutText">
-                <h1>#Know Us...</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, iure eos!</p>
+                <h1>#Get to Know Glowify...</h1>
+                <p>We believe in nurturing your skin with the finest ingredients for a radiant, healthy glow.</p>
             </div>
-
+        
             <div class="aboutus">
-                <img src="lap.png" alt="">
+                <img src="img/feature-1.jpg" alt="Glowify Skincare Routine">
                 <div class="dumiText">
-                    <h1>Who we are ?</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing Dolorum corrupti consequuntur sunt ipsam
-                        aperiam vel magni sequi eos sit amet consectetur adipisicing Dolorum corrupti consequuntur sunt
-                        ipsam aperiam vel magni sequi eos atque nam maxime dolorem fuga, rem eum iure quidem! Illo
-                        corporis, asperiores ipsum excepturi voluptates necessitatibus consectetur odit omnis hic
-                        praesentium autem, officiis dignissimos assumenda saepe.</p>
+                    <h1>Who We Are</h1>
+                    <p>Glowify is dedicated to offering premium skincare solutions that promote a natural and lasting glow. Our carefully crafted products are made with love, focusing on what your skin truly needs. From cleansers to moisturizers, each item is designed to rejuvenate, protect, and elevate your skincare routine. At Glowify, we are passionate about helping you feel confident in your skin, every day.</p>
                 </div>
             </div>
         </div>
+        
 
         <!-- contact -->
 
         <div class="contact">
             <div class="contactBanner">
-                <h1>#Let's Connect</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, iure eos!</p>
-
+                <h1>#Let's Glow Together</h1>
+                <p>Have questions about skincare or our products? We’re here to help!</p>
             </div>
+            
             <div class="connect">
                 <div class="connectText">
-                    <h1>Visit Our Office or Contact <br> Us Today</h1>
-                    <p>Address : Dablin Park, England, New york</p>
-                    <p>Contact : dumiemail@gmail.com</p>
-                    <p>Number : 999999000011</p>
+                    <h1>Visit Us or Get in Touch <br> with Glowify Today</h1>
+                    <p>Address: 123 Glow Street, Skincare City, NY 10001</p>
+                    <p>Email: glowifycare@gmail.com</p>
+                    <p>Phone: +1 (800) 555-1234</p>
                 </div>
-                <img src="map.PNG" alt="">
+                <img src="img/map.PNG" alt="Glowify Location Map">
             </div>
-
+        
             <div class="form">
-                <h1>Connect with Us. Fill Form</h1>
-                <input type="text" placeholder="Enter Your FirstName"> <br>
-                <input type="text" placeholder="Enter Your LsstName"> <br>
-                <input type="text" placeholder="Enter Your Email"><br>
-                <input type="text" placeholder="Enter Your Number"><br>
+                <h1>Connect with Glowify. Fill Out the Form</h1>
+                <input type="text" placeholder="Enter Your First Name"><br>
+                <input type="text" placeholder="Enter Your Last Name"><br>
+                <input type="email" placeholder="Enter Your Email"><br>
+                <input type="tel" placeholder="Enter Your Phone Number"><br>
                 <input type="text" placeholder="Enter Your Address"><br>
-                <button>Submit</button>
-
+                <button type="button">Submit</button>
             </div>
         </div>
-
+        
         <div class="letter">
             <div class="sign">
-                <h2>Sign Up for NewsLetter</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur Special Offer</p>
+                <h2>Sign Up for Glowify News & Offers</h2>
+                <p>Get the latest skincare tips, exclusive offers, and product updates.</p>
             </div>
             <div class="inp">
-                <input type="text" placeholder="Enter Email Address">
-                <button>Sign Up</button>
+                <input type="email" placeholder="Enter Your Email Address">
+                <button type="button">Sign Up</button>
             </div>
         </div>
-
+        
         <!-- Footer -->
-
+        
         <div class="footer">
             <div class="Ftext">
-                <h1>Trends</h1>
-                <p>Service</p>
-                <p>Customer</p>
-                <p>Satisfation</p>
-
+                <h1>Glowify</h1>
+                <p>Premium Skincare Products</p>
+                <p>Expert Tips & Advice</p>
+                <p>Customer Satisfaction</p>
             </div>
             <div class="Ftext">
-                <h3>About US</h3>
-                <p>Adrress : Lorem ipsum dolor sit amet,<br> consectetur adipisicing <br> Perferendis, excepturi alias.
-                </p>
-                <p>Service</p>
-                <p>Customer</p>
-                <p>Satisfation</p>
-
+                <h3>About Us</h3>
+                <p>Address: 123 Glow Street, Skincare City, <br> NY 10001</p>
+                <p>Natural Ingredients</p>
+                <p>Dermatologist Approved</p>
+                <p>Glowify Promise</p>
             </div>
             <div class="Ftext">
-                <h3>Contect</h3>
-                <p>9989003229</p>
-                <p>Customer</p>
-                <p>Comming up..</p>
-                <p>New Arrival</p>
-
+                <h3>Contact Us</h3>
+                <p>+1 (800) 555-1234</p>
+                <p>support@glowify.com</p>
+                <p>Customer Support</p>
+                <p>Product Inquiries</p>
             </div>
             <div class="Ftext">
-                <h3>Trending</h3>
-                <p>Service</p>
-                <p>Customer</p>
-                <p>SHops</p>
-                <p></p>
-
+                <h3>What's New</h3>
+                <p>New Arrivals</p>
+                <p>Best Sellers</p>
+                <p>Seasonal Skincare</p>
+                <p>Exclusive Offers</p>
             </div>
         </div>
-
+        
 
     </div>
     <script src="index.js"></script>
+    <script src="products.js"></script>
 </body>
 
 </html>
