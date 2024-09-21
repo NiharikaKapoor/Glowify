@@ -1,0 +1,103 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #eeeeee;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    box-shadow: 0px 2px 2px 2px rgb(204, 203, 203);
+    padding: 20px;
+}
+
+button{
+    cursor: pointer;
+}
+
+nav .logo{
+    margin-left: 45px;
+    font-size:22px;
+    
+}
+nav h1{
+    font-family: 'Lato', sans-serif;
+}
+ul li a{
+    margin-inline: 25px;
+     font-size: 20px;
+     
+}
+ul #home{
+    color: rgb(1, 190, 190);
+}
+ul li i{
+    font-size: 22px;
+}
+ul li i:hover{
+    color: rgb(87, 86, 86);
+    cursor: pointer;
+}
+ul li a:hover{
+     color: rgb(87, 86, 86);
+     cursor: pointer;
+
+     border-bottom: 2px solid rgb(73, 73, 73);
+      
+}
+ul{
+    margin-right: 50px;
+    margin-top: 6px;
+}
+ 
+nav ul{
+    list-style: none;
+}
+.mainPage{
+    display: flex;
+    justify-content: space-around;
+}
+.mainPage .text{
+    margin-top: 123px;
+}
+.text button:hover{
+    border: 3px solid rgb(4, 168, 168);
+    background-color: transparent;
+    font-weight: 700;
+    color: rgb(4, 168, 168);
+    
+
+}
+.text h1{
+    font-size: 54px;
+}
+.mainPage img{
+    height: 450px;
+   margin-top: 44px;
+   
+}
+.heads{
+    color: rgb(2, 131, 131);
+}
+.text p{
+    margin-top: 22px;
+}
+.text h2{
+    color: rgb(63, 63, 63);
+}
+.text button{
+    width: 140px;
+    height: 40px;
+    margin-top: 23px;
+    background-color: rgb(2, 131, 131);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+/*  */
+
