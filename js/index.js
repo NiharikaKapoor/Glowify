@@ -36,7 +36,7 @@ let aboutPage = document.querySelector(".about");
 let contactus = document.querySelector(".contact");
 
 function home() {
-   mainPage.style.display = "flex";
+   document.querySelector(".fullPage").classList.add("nope");   mainPage.style.display = "flex";
    cardMain.style.display = "block";
    cardMain2.style.display = "block";
    blogContent.style.display = "block"
@@ -55,7 +55,7 @@ function home() {
 
 
 function shop() {
-    cardMain.style.display = "block";
+   document.querySelector(".fullPage").classList.add("nope");    cardMain.style.display = "block";
     cardMain2.style.display = "block";
    mainPage.style.display = "none"
    blogContent.style.display = "none";
@@ -74,7 +74,7 @@ function shop() {
 
 
 function blog() {
-
+   document.querySelector(".fullPage").classList.add("nope");
     cardMain.style.display = "none";
     cardMain2.style.display = "none";
    mainPage.style.display = "none";
@@ -96,7 +96,7 @@ function blog() {
 
 
 function about() {
-   aboutPage.style.display = "block";
+   document.querySelector(".fullPage").classList.add("nope");   aboutPage.style.display = "block";
    cardMain.style.display = "none";
    cardMain2.style.display = "none";
    mainPage.style.display = "none";
@@ -114,6 +114,7 @@ function about() {
 
 
 function contact() {
+   document.querySelector(".fullPage").classList.add("nope");
    contactus.style.display="block";
    aboutPage.style.display = "none";
    cardMain.style.display = "none";
@@ -137,7 +138,7 @@ function showCard(num){
    document.getElementById("productDesc1").textContent = product.desc1;
    document.getElementById("productDesc2").textContent = product.desc2;
    document.getElementById("productDesc3").textContent = product.desc3;
-   document.querySelector(".fullPage").style.display="flex";
+   document.querySelector(".fullPage").classList.remove("nope");
    contactus.style.display="none";
    aboutPage.style.display = "none";
    cardMain.style.display = "none";
