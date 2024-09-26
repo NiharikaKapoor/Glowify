@@ -18,12 +18,12 @@ const products = [
 
 
    {
-      "name": "Bio-shroom Rejuvenating Serum",
-      "price": "$35",
-      "desc1": "Revitalizes skin with mushroom extracts.",
-      "desc2": "Boosts collagen production for youthful skin.",
-      "desc3": "Reduces fine lines and enhances elasticity.",
-      "src": "img/product-10.jpg"
+      name: "Bio-shroom Rejuvenating Serum",
+      price: "$35",
+      desc1: "Revitalizes skin with mushroom extracts.",
+      desc2: "Boosts collagen production for youthful skin.",
+      desc3: "Reduces fine lines and enhances elasticity.",
+      src: "img/product-10.jpg"
    }
   
 ];
@@ -138,6 +138,8 @@ function showCard(num){
    document.getElementById("productDesc1").textContent = product.desc1;
    document.getElementById("productDesc2").textContent = product.desc2;
    document.getElementById("productDesc3").textContent = product.desc3;
+
+   document.querySelector(".btn button:nth-child(2)").setAttribute("onclick", `addToCart(${num})`);
    document.querySelector(".fullPage").classList.remove("nope");
    contactus.style.display="none";
    aboutPage.style.display = "none";
@@ -162,12 +164,45 @@ function addItem(){
    blogContent.style.display = "none"
 
  
-
-
-
 }
  
 function addToCart(){
    alert("Added To Cart");
    location.reload();
+}
+
+
+
+function addToCart(productIndex) {
+   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+   const product = products[productIndex];
+   
+   const existingItem = cart.find(item => item.name === product.name);
+   
+   if (existingItem) {
+       existingItem.quantity += 1;
+   } else {
+       const newItem = {
+           id: productIndex,
+           name: product.name,
+           price: parseFloat(product.price.replace('$', '')),
+           quantity: 1,
+           image: product.src
+       };
+       cart.push(newItem);
+   }
+
+   localStorage.setItem('cart', JSON.stringify(cart));
+   updateCartCount();
+   alert(`${product.name} has been added to your cart!`);
+}
+
+function updateCartCount() {
+   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+   const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+   document.getElementById('cart-count').textContent = cartCount;
+}
+
+function showCart() {
+    window.location.href = 'cart.html'; // Redirect to the cart page
 }

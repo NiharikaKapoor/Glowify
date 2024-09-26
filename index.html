@@ -30,6 +30,9 @@
                     <a id="about" onclick=" about()">About</a>
                     <a id="contact" onclick="contact()">Contact</a>
                     <i onclick="addItem()" class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    <i onclick="showCart()" class="fa-sharp fa-solid fa-cart-shopping">
+                        <span id="cart-count">0</span> <!-- Cart item count -->
+                    </i>
                 </li>
             </ul>
         </nav>
@@ -144,6 +147,7 @@
         <div class="fullPage nope">
             <img id="cartImg" src=" " alt="">
             <div class="cartText">
+                <!-- <h1 id="productId">1</h1> -->
                 <h1 id="productName">Glowify Special: Shop Trending Skincare</h1>
                 <h2>Special Price</h2>
                 <h2 id="productPrice">$11</h2>
@@ -152,7 +156,7 @@
                 <p id="productDesc3">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
                 <div class="btn">
                     <button>Buy Now</button>
-                    <button onclick="addToCart(1)">Add To Cart</button>
+                    <button onclick="">Add To Cart</button> 
                 </div>
                 <div class="btns">
                     <button class="relode" onclick="location.reload()">Back </button>

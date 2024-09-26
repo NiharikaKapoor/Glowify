@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowify - Reveal The Beauty of Skin</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Piedra&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>GLOWIFY</h1>
+            </div>
+            <ul>
+                <li>
+                    <a id="home" onclick="home()">Home</a>
+                    <a id="shop" onclick="shop()">Shops</a>
+                    <a id="blog" onclick="blog()">Blog</a>
+                    <a id="about" onclick=" about()">About</a>
+                    <a id="contact" onclick="contact()">Contact</a>
+                    <i onclick="addItem()" class="fa-sharp fa-solid fa-cart-shopping"></i>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="cart-container">
+            <h1>Your Shopping Cart</h1>
+            <div class="cart-items">
+                <!-- Items will be dynamically added here -->
+            </div>
+    
+            <div class="cart-summary">
+                <h2>Total Amount: $<span id="totalAmount">0.00</span></h2>
+                <button onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    
+
+        <div class="letter">
+            <div class="sign">
+                <h2>Sign Up for Glowify News & Offers</h2>
+                <p>Get the latest skincare tips, exclusive offers, and product updates.</p>
+            </div>
+            <div class="inp">
+                <input type="email" placeholder="Enter Your Email Address">
+                <button type="button">Sign Up</button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        
+        <div class="footer">
+            <div class="Ftext">
+                <h1>Glowify</h1>
+                <p>Premium Skincare Products</p>
+                <p>Expert Tips & Advice</p>
+                <p>Customer Satisfaction</p>
+            </div>
+            <div class="Ftext">
+                <h3>About Us</h3>
+                <p>Address: 123 Glow Street, Skincare City, <br> NY 10001</p>
+                <p>Natural Ingredients</p>
+                <p>Dermatologist Approved</p>
+                <p>Glowify Promise</p>
+            </div>
+            <div class="Ftext">
+                <h3>Contact Us</h3>
+                <p>+1 (800) 555-1234</p>
+                <p>support@glowify.com</p>
+                <p>Customer Support</p>
+                <p>Product Inquiries</p>
+            </div>
+            <div class="Ftext">
+                <h3>What's New</h3>
+                <p>New Arrivals</p>
+                <p>Best Sellers</p>
+                <p>Seasonal Skincare</p>
+                <p>Exclusive Offers</p>
+            </div>
+        </div>
+        
+
+    </div>
+    <script src="js/cart.js"></script>
+    <script src="css/index.js"></script>
+</body>
+
+</html>
