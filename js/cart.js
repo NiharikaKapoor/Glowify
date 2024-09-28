@@ -1,4 +1,6 @@
-let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+let cartKey = currentUser ? `cart_${currentUser.username || currentUser.email}` : 'cart';
+console.log(cartKey);
+let cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
 
 function renderCartItems() {
     const cartItemsContainer = document.querySelector('.cart-items');
@@ -36,8 +38,9 @@ function renderCartItems() {
 function increaseQuantity(id) {
     const item = cartItems.find(item => item.id === id);
     item.quantity++;
-    localStorage.setItem('cart', JSON.stringify(cartItems));
+    localStorage.setItem(cartKey, JSON.stringify(cartItems));
     renderCartItems();
+    updateCartCount();
 }
 
 function decreaseQuantity(id) {
@@ -47,8 +50,9 @@ function decreaseQuantity(id) {
     } else {
         cartItems = cartItems.filter(item => item.id !== id); // Remove item if quantity is 0
     }
-    localStorage.setItem('cart', JSON.stringify(cartItems));
+    localStorage.setItem(cartKey, JSON.stringify(cartItems));
     renderCartItems();
+    updateCartCount();
 }
 
 function calculateTotal() {
@@ -66,37 +70,53 @@ function checkout() {
 // Initial render
 renderCartItems();
 
-const homeButton = document.getElementById('home');
-homeButton.addEventListener('click', function () {
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+document.getElementById('home').addEventListener('click', function () {
     window.location.href = 'index.html';
-    home();
 });
 
-const shopButton = document.getElementById('shop');
-shopButton.addEventListener('click', function () {
+updateCartCount();
+
+function logout() {
+    localStorage.removeItem('currentUser');
     window.location.href = 'index.html';
-    shop();
+}
+
+
+
+// Get the hamburger and mobile menu elements
+const hamburger2 = document.getElementById("hamburger2");
+const mobileMenu2 = document.getElementById("mobile-menu2");
+
+// Toggle the mobile menu on click
+hamburger2.addEventListener("click", function(e) {
+   e.stopPropagation(); // Prevent the click event from propagating to the document
+   if (mobileMenu2.style.display === "block") {
+      mobileMenu2.style.display = "none";
+   } else {
+      mobileMenu2.style.display = "block";
+   }
 });
 
-const aboutButton = document.getElementById('about');
-aboutButton.addEventListener('click', function () {
-    window.location.href = 'index.html';
-    about();
+// Hide mobile menu when clicking anywhere else
+document.addEventListener("click", function() {
+   mobileMenu2.style.display = "none";
 });
 
-const blogButton = document.getElementById('blog');
-blogButton.addEventListener('click', function () {
-    window.location.href = 'index.html';
-    blog();
+// Prevent menu from hiding when clicking inside the menu itself
+mobileMenu2.addEventListener("click", function(e) {
+   e.stopPropagation(); // Prevent the click event from closing the menu when clicked inside it
 });
 
-const contactButton = document.getElementById('contact');
-contactButton.addEventListener('click', function () {
-
-    window.location.href = 'index.html';
-    setTimeout(function () {
-        // window.location.href = 'contact.html';
-    }, 10000);
-    console.log('here');
-    contact();
+// Handle window resize
+window.addEventListener("resize", function() {
+   if (window.innerWidth > 800) {
+       mobileMenu2.style.display = "none"; // Hide the menu on larger screens
+   }
 });
+

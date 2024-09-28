@@ -31,6 +31,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     document.getElementById("signupError").textContent = "Sign up successful! Redirecting to homepage...";
 
     // Redirect to the main index page after a delay (e.g., 1 second)
+    localStorage.setItem("currentUser", JSON.stringify(user));
     setTimeout(function () {
         window.location.href = "index.html";  // Redirect to main page
     }, 1000);
@@ -57,7 +58,8 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     if (storedUser.password === password) {
         document.getElementById("loginError").textContent = "Login successful!";
         
-        // Redirect to the main index page after a delay (e.g., 1 second)
+        // Redirect to the main index page after a delay 
+        localStorage.setItem("currentUser", JSON.stringify(storedUser));
         setTimeout(function () {
             window.location.href = "index.html";  // Redirect to main page
         }, 1000);
@@ -69,25 +71,3 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     // Clear the form
     document.getElementById("loginForm").reset();
 });
-
-// // Handle Login
-// document.getElementById("loginForm").addEventListener("submit", function (e) {
-//     e.preventDefault();
-    
-//     const email = document.getElementById("loginEmail").value;
-//     const password = document.getElementById("loginPassword").value;
-
-//     const storedUser = JSON.parse(localStorage.getItem(email));
-
-//     if (storedUser && storedUser.password === password) {
-//         localStorage.setItem('currentUser', email); // Store the logged-in user
-//         document.getElementById("loginError").textContent = "Login successful!";
-//         setTimeout(function () {
-//             window.location.href = "index.html";  // Redirect to main page
-//         }, 1000);
-//     } else {
-//         document.getElementById("loginError").textContent = "Incorrect email or password.";
-//     }
-
-//     document.getElementById("loginForm").reset();
-// });

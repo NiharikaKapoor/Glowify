@@ -172,14 +172,36 @@ function addToCart(){
    location.reload();
 }
 
+function login() {   
+   window.location.href = 'login.html'; // Redirect to the login page
+}
+
+
+function logout() {
+   localStorage.removeItem('currentUser');
+   window.location.reload(); // Refresh the page
+}
+
+function showCart() {
+   window.location.href = 'cart.html'; // Redirect to the cart page
+}
 
 
 function addToCart(productIndex) {
-   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+   if (!currentUser) {
+      alert('Please login to add items to your cart.');
+      window.location.href = 'login.html'; // Redirect to the login page
+      return;
+   }
+
+   // Use the currentUser's username/email as the key for the cart
+   const cartKey = `cart_${currentUser.username || currentUser.email}`;
+   let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+   
    const product = products[productIndex];
-   
    const existingItem = cart.find(item => item.name === product.name);
-   
+
    if (existingItem) {
        existingItem.quantity += 1;
    } else {
@@ -193,17 +215,62 @@ function addToCart(productIndex) {
        cart.push(newItem);
    }
 
-   localStorage.setItem('cart', JSON.stringify(cart));
+   localStorage.setItem(cartKey, JSON.stringify(cart));
    updateCartCount();
    alert(`${product.name} has been added to your cart!`);
 }
 
 function updateCartCount() {
-   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-   const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
-   document.getElementById('cart-count').textContent = cartCount;
+   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+   if (currentUser) {
+      const cartKey = `cart_${currentUser.username || currentUser.email}`;
+      let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+      const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+      document.getElementById('cart-count').textContent = cartCount;
+   }
 }
 
-function showCart() {
-    window.location.href = 'cart.html'; // Redirect to the cart page
+const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+if (currentUser) {
+   document.querySelector(".login").classList.add('nope');
+   document.querySelector(".logout").classList.remove('nope');
+   document.querySelector(".cart-icon-container").classList.remove('nope');
+   document.querySelector(".login-mov").classList.add('nope');
+   document.querySelector(".logout-mov").classList.remove('nope');
+   document.getElementById("cart-mov").classList.remove('nope');
+}else{   
+   document.querySelector(".login").classList.remove('nope');
+   document.querySelector(".logout").classList.add('nope');
+   document.querySelector(".cart-icon-container").classList.add('nope');
+   document.querySelector(".login-mov").classList.remove('nope');
+   document.querySelector(".logout-mov").classList.add('nope');
+   document.getElementById("cart-mov").classList.add('nope');
 }
+
+updateCartCount();
+
+// Get the hamburger and mobile menu elements
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+
+// Toggle the mobile menu on click
+hamburger.addEventListener("click", function(e) {
+   e.stopPropagation(); // Prevent the click event from propagating to the document
+   mobileMenu.style.display = "block";
+});
+
+// Hide mobile menu when clicking anywhere else
+document.addEventListener("click", function() {
+   mobileMenu.style.display = "none";
+});
+
+// Prevent menu from hiding when clicking inside the menu itself
+mobileMenu.addEventListener("click", function(e) {
+   e.stopPropagation(); // Prevent the click event from closing the menu when clicked inside it
+});
+
+window.addEventListener("resize", function() {
+   if (window.innerWidth > 800) {
+       mobileMenu.style.display = "none";
+   }
+});

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glowify - Reveal The Beauty of Skin</title>
-    <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/d0880b358e.js" crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
@@ -13,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Piedra&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    
 
 </head>
 
@@ -22,6 +23,11 @@
             <div class="logo">
                 <h1>GLOWIFY</h1>
             </div>
+
+            <div class="hamburger" id="hamburger">
+                <i class="fa fa-bars"></i>
+            </div>
+
             <ul>
                 <li>
                     <a id="home" onclick="home()">Home</a>
@@ -29,13 +35,29 @@
                     <a id="blog" onclick="blog()">Blog</a>
                     <a id="about" onclick=" about()">About</a>
                     <a id="contact" onclick="contact()">Contact</a>
-                    <!-- <i onclick="addItem()" class="fa-sharp fa-solid fa-cart-shopping"></i> -->
-                    <i onclick="showCart()" class="fa-sharp fa-solid fa-cart-shopping">
-                        <span id="cart-count">0</span> <!-- Cart item count -->
-                    </i>
+                    <button type="button" class="login nope" onclick="login()">Login</button>
+                    <button type="button" class="logout nope" onclick="logout()">Logout</button>
+                    <div class="cart-icon-container " onclick="showCart()">
+                        <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                        <span class="cart-quantity" id="cart-count">0</span> <!-- Cart Quantity Badge -->
+                    </div>
                 </li>
             </ul>
+            
         </nav>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <a id="home-mov" onclick="home()">Home</a>
+                <a id="shop-mov" onclick="shop()">Shops</a>
+                <a id="blog-mov" onclick="blog()">Blog</a>
+                <a id="about-mov" onclick=" about()">About</a>
+                <a id="contact-mov" onclick="contact()">Contact</a>
+                <a id="cart-mov" onclick="showCart()">Cart</a>
+                <button type="button" class="login-mov nope" onclick="login()">Login</button>
+                <button type="button" class="logout-mov nope" onclick="logout()">Logout</button>
+            </ul>
+        </div>
 
         <div class="mainPage">
             <div class="text">
@@ -273,7 +295,6 @@
 
     </div>
     <script src="js/index.js"></script>
-    <!-- <script src="js/cart.js"></script> -->
 </body>
 
 </html>
