@@ -66,3 +66,37 @@ function checkout() {
 // Initial render
 renderCartItems();
 
+const homeButton = document.getElementById('home');
+homeButton.addEventListener('click', function () {
+    window.location.href = 'index.html';
+    home();
+});
+
+const shopButton = document.getElementById('shop');
+shopButton.addEventListener('click', function () {
+    window.location.href = 'index.html';
+    shop();
+});
+
+const aboutButton = document.getElementById('about');
+aboutButton.addEventListener('click', function () {
+    window.location.href = 'index.html';
+    about();
+});
+
+const blogButton = document.getElementById('blog');
+blogButton.addEventListener('click', function () {
+    window.location.href = 'index.html';
+    blog();
+});
+
+const contactButton = document.getElementById('contact');
+contactButton.addEventListener('click', function () {
+
+    window.location.href = 'index.html';
+    setTimeout(function () {
+        // window.location.href = 'contact.html';
+    }, 10000);
+    console.log('here');
+    contact();
+});

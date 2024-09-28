@@ -114,6 +114,7 @@ function about() {
 
 
 function contact() {
+   console.log("contact");
    document.querySelector(".fullPage").classList.add("nope");
    contactus.style.display="block";
    aboutPage.style.display = "none";

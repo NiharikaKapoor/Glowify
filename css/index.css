@@ -392,7 +392,7 @@ nav ul{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('img/background_image.jpg'); /* Add your background image */
+    background-image: url('../img/background_image.jpg'); /* Add your background image */
     background-size: cover;
     background-position: center;
     position: relative; /* Ensure that the blur effect only affects the background */
@@ -537,10 +537,6 @@ nav ul{
 .cart-summary button:hover {
     background-color: rgb(2, 131, 131);
 }
-
-
-
-
 
 @media screen and (max-width: 800px){
 
