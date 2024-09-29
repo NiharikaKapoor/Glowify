@@ -2,6 +2,10 @@
 
 Glowify is a modern and sleek website designed to offer users an immersive experience in discovering the best skin care products, routines, and tips. Built with a focus on aesthetics and functionality, Glowify ensures users can easily navigate and explore the perfect regimen for their skin type.
 
+## Preview
+
+![Screenshot 2024-09-28 234102](https://github.com/user-attachments/assets/40426071-df1a-44d1-8480-555f32eef14d)
+
 ## Features
 
 - **Product Catalog**: Browse through a wide variety of skincare products.
