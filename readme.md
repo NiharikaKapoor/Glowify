@@ -15,6 +15,11 @@ Glowify is a modern and sleek website designed to offer users an immersive exper
 - **User Accounts**: Create and manage personalized skincare routines.
 - **Search & Filter**: Advanced search functionality for quick product discovery.
 
+
+## Responsiveness
+
+![Screenshot 2024-09-29 133123](https://github.com/user-attachments/assets/04df6389-94e8-4bdb-9e47-fee614e539c1)
+
 ## Technologies Used
 
 - **HTML**: Structuring the content.
